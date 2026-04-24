@@ -38,7 +38,9 @@ jobs:
       - name: Detect upstream runtime user
         id: upstream-user
         run: |
-          original_user=$(docker buildx imagetools inspect "docker.io/vectorim/element-web:${{ steps.version.outputs.value }}" --format "{{.Config.User}}")
+          image_ref="docker.io/vectorim/element-web:${{ steps.version.outputs.value }}"
+          docker pull "$image_ref" >/dev/null
+          original_user=$(docker image inspect "$image_ref" --format "{{.Config.User}}")
           if [ -z "$original_user" ]; then
             original_user=root
           fi
