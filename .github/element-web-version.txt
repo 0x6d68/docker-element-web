@@ -1,0 +1,2 @@
+# renovate: datasource=docker depName=vectorim/element-web
+v1.12.16-rc.1
