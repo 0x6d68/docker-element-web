@@ -10,7 +10,7 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^\.github/element-web-version\.txt$"
+        "^\\.github/element-web-version\\.txt$"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\n(?<currentValue>[^\\s]+)"
